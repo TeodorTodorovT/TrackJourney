@@ -25,7 +25,7 @@ app.post('/logs', (req, res) => {
 });
 
 // Server
-const PORT = process.env.PORT || 3030;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
