@@ -1,0 +1,39 @@
+<h1>TrackJourney</h1>
+
+<form id="habitForm">
+  <h3>Set your 3 daily habits you want to focus on for the month:</h3>
+  <label><input type="checkbox" name="exercise" checked disabled> Exercise</label>
+  <label><input type="checkbox" name="read" checked disabled> Read</label>
+  <label><input type="checkbox" name="clean" checked disabled> Clean</label>
+  <button type="submit">Set Habits</button>
+  <p><i>*you will be able to set your own custom habits soon</i></p>
+</form>
+
+<form id="dailyLogForm">
+  <h3>Daily Log</h3>
+  <div>
+    <label for="proudOf">Something you did today that you are proud of:</label>
+    <input type="text" id="proudOf" required>
+  </div>
+  <div>
+    <label>Habits:</label>
+    <label><input type="checkbox" id="exercise"> Exercise</label>
+    <label><input type="checkbox" id="read"> Read</label>
+    <label><input type="checkbox" id="clean"> Clean</label>
+  </div>
+  <div>
+    <label for="mood">Mood:</label>
+    <select id="mood" required>
+      <option value="😊">😊 Happy</option>
+      <option value="😐">😐 Neutral</option>
+      <option value="😞">😞 Sad</option>
+    </select>
+  </div>
+  <button type="submit">Log</button>
+</form>
+
+<div id="logsContainer">
+
+</div>
+
+<script src="/js/app.js"></script>
