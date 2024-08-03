@@ -9,10 +9,13 @@ const app = express();
 // Middleware to handle JSON data
 app.use(express.json());
 
-console.log(__dirname);
+const staticPath = path.join(process.cwd(), 'public');
+const viewsPath = path.join(process.cwd(), 'views');
+
+console.log(process.cwd());
 
 
-app.use(express.static(path.join(__dirname, '../../../../views')));
+app.use(express.static(staticPath));
 
 app.engine(
     'hbs',
@@ -21,7 +24,7 @@ app.engine(
     })
 );
 app.set('view engine', 'hbs');
-app.set('views', path.join(__dirname, '../../../../views'));
+app.set('views', viewsPath);
 
 // Routes
 
