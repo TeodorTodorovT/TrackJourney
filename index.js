@@ -1,8 +1,11 @@
 import express from 'express';
 import handlebars from 'express-handlebars';
 import serverless from 'serverless-http';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-console.log(serverless);
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 
 const app = express();
@@ -10,7 +13,7 @@ const app = express();
 // Middleware to handle JSON data
 app.use(express.json());
 
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.engine(
     'hbs',
@@ -19,6 +22,7 @@ app.engine(
     })
 );
 app.set('view engine', 'hbs');
+app.set('views', path.join(__dirname, 'views'));
 
 // Routes
 
