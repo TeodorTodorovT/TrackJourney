@@ -1,6 +1,6 @@
 import express from 'express';
 import handlebars from 'express-handlebars';
-const serverless = require('serverless-http');
+import serverless from 'serverless-http';
 
 const app = express();
 
