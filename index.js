@@ -6,9 +6,14 @@ const app = express();
 // Middleware to handle JSON data
 app.use(express.json());
 
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
-app.engine('hbs', handlebars.engine({ extname: 'hbs' }));
+app.engine(
+    'hbs',
+    handlebars.engine({
+        extname: 'hbs',
+    })
+);
 app.set('view engine', 'hbs');
 
 // Routes
