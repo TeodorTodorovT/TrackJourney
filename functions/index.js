@@ -2,12 +2,15 @@ import express from 'express';
 import handlebars from 'express-handlebars';
 import serverless from 'serverless-http';
 
+console.log(serverless);
+
+
 const app = express();
 
 // Middleware to handle JSON data
 app.use(express.json());
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static('public'));
 
 app.engine(
     'hbs',
@@ -34,5 +37,4 @@ app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
 
-
-module.exports.handler = serverless(app);
+export const handler = serverless(app);
