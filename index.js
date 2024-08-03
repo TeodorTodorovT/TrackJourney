@@ -1,9 +1,7 @@
-const express = require('express');
-const handlebars = require('express-handlebars');
+import express from 'express';
+import handlebars from 'express-handlebars';
 
 const app = express();
-
-
 
 // Middleware to handle JSON data
 app.use(express.json());
@@ -17,11 +15,11 @@ app.set('view engine', 'hbs');
 
 app.get('/', (req, res) => {
     res.render('home');
-})
+});
 
 app.post('/logs', (req, res) => {
     const logs = req.body.logs;
-    res.render('partials/logs', {logs});
+    res.render('partials/logs', { logs });
 });
 
 // Server
@@ -30,4 +28,3 @@ app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
 
-module.exports = app;
