@@ -1,9 +1,10 @@
-<div>
+<div class='log'>
     <h3>{{date}}</h3>
-    <p>Proud of: {{proudOf}}</p>
-    <p>Habits:
-        {{#if habits.exercise}}Exercise{{/if}}
-        {{#if habits.read}}Read{{/if}}
-        {{#if habits.clean}}Clean{{/if}}</p>
-    <p>Mood: {{mood}}</p>
+    <p class="proud">{{proudOf}}</p>
+    <div class='log-habits'>
+        <p>{{#if habits.exercise}}✅{{else}}❌{{/if}}</p>
+        <p>{{#if habits.read}}✅{{else}}❌{{/if}}</p>
+       <p>{{#if habits.clean}}✅{{else}}❌{{/if}}</p>
+    </div>
+    <p class="mood">{{mood}}</p>
 </div>
