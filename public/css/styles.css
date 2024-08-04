@@ -60,14 +60,22 @@ button:hover {
     text-align: center;
 }
 
-.logs #logsContainer .log {
-    height: 30px;
+.logs .header{
+  font-weight: bold;
 }
+
 
 .logs #logsContainer .log .log-habits {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
+
+.proud {
+  max-width: 300px;
+  word-wrap: break-word;
+}
+
+
 
 .logs .header .habits {
     display: grid;
@@ -75,4 +83,22 @@ button:hover {
 }
 .logs .header .habits p {
     transform: rotate(-65deg);
+}
+
+
+/* Mobile styles */
+@media (max-width: 767px) {
+  .logs .header .habits p {
+    transform: rotate(-90deg);
+    width: 20px;
+}
+
+.logs #logsContainer .log .log-habits p{
+  width: 20px;
+}
+}
+
+/* Tablet styles */
+@media (min-width: 768px) and (max-width: 893px) {
+
 }
