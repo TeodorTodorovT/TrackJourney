@@ -71,7 +71,6 @@ button:hover {
 }
 
 .proud {
-  max-width: 300px;
   word-wrap: break-word;
 }
 
@@ -96,6 +95,16 @@ button:hover {
 .logs #logsContainer .log .log-habits p{
   width: 20px;
 }
+
+.proud {
+  max-width: 300px;
+}
+}
+
+@media (max-width: 380px) {
+  .proud {
+    max-width: 150px;
+  }
 }
 
 /* Tablet styles */
