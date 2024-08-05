@@ -1,6 +1,6 @@
 import express from 'express';
 import handlebars from 'express-handlebars';
-
+import path from 'path';
 
 const app = express();
 
@@ -11,7 +11,9 @@ app.use(express.json());
 console.log(process.cwd());
 
 
-app.use(express.static('public'));
+app.use(express.static(path.join(path.resolve(), 'public')));
+// console.log(path.join(path.resolve(), '../public'));
+
 
 app.engine(
     'hbs',
@@ -20,7 +22,7 @@ app.engine(
     })
 );
 app.set('view engine', 'hbs');
-app.set('views', 'views');
+app.set('views', path.join(path.resolve(), 'views'));
 
 // Routes
 
@@ -33,9 +35,4 @@ app.post('/logs', (req, res) => {
     res.render('partials/logs', { logs });
 });
 
-
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-});
-
+export default app;
