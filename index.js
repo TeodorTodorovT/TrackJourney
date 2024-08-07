@@ -1,19 +1,13 @@
 import express from 'express';
 import handlebars from 'express-handlebars';
-import path from 'path';
 
 const app = express();
+
 
 // Middleware to handle JSON data
 app.use(express.json());
 
-
-console.log(process.cwd());
-
-
-app.use(express.static(path.join(path.resolve(), 'public')));
-// console.log(path.join(path.resolve(), '../public'));
-
+app.use(express.static('public'));
 
 app.engine(
     'hbs',
@@ -21,8 +15,9 @@ app.engine(
         extname: 'hbs',
     })
 );
+
 app.set('view engine', 'hbs');
-app.set('views', path.join(path.resolve(), 'views'));
+app.set('views', 'views');
 
 // Routes
 
@@ -35,4 +30,8 @@ app.post('/logs', (req, res) => {
     res.render('partials/logs', { logs });
 });
 
-export default app;
+const PORT = 3000;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
+

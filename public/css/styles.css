@@ -7,6 +7,16 @@ body {
     padding: 20px;
 }
 
+.wrapper {
+    width: 70%;
+    margin: 0 auto;
+}
+
+
+h1 {
+    text-align: center;
+}
+
 h3 {
     color: #333;
 }
@@ -60,10 +70,9 @@ button:hover {
     text-align: center;
 }
 
-.logs .header{
-  font-weight: bold;
+.logs .header {
+    font-weight: bold;
 }
-
 
 .logs #logsContainer .log .log-habits {
     display: grid;
@@ -71,10 +80,8 @@ button:hover {
 }
 
 .proud {
-  word-wrap: break-word;
+    word-wrap: break-word;
 }
-
-
 
 .logs .header .habits {
     display: grid;
@@ -84,30 +91,35 @@ button:hover {
     transform: rotate(-65deg);
 }
 
-
 /* Mobile styles */
 @media (max-width: 767px) {
-  .logs .header .habits p {
-    transform: rotate(-90deg);
-    width: 20px;
-}
+    .logs .header .habits p {
+        transform: rotate(-90deg);
+        width: 20px;
+    }
 
-.logs #logsContainer .log .log-habits p{
-  width: 20px;
-}
+    .logs #logsContainer .log .log-habits p {
+        width: 20px;
+    }
 
-.proud {
-  max-width: 300px;
-}
+    .proud {
+        max-width: 300px;
+    }
+
+    .wrapper {
+      width: 100%;
+    }
 }
 
 @media (max-width: 380px) {
-  .proud {
-    max-width: 150px;
-  }
+    .proud {
+        max-width: 150px;
+    }
 }
 
 /* Tablet styles */
 @media (min-width: 768px) and (max-width: 893px) {
-
+  .wrapper {
+    width: 100%;
+  }
 }
